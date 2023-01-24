@@ -1,0 +1,26 @@
+<!-- Index HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="utf-8"/>
+        <title>Project7_scope_time_function</title>
+        <script src="./JS/JavaScript_File.js"></script> 
+    </head>
+
+    <body>
+        <!--Used to call get_Date ()-->
+        <p id="Greeting" ondblclick="get_date()">Guess What?</p>
+
+        <!--Used to call to get_Reply ()-->
+        <p>Using the input box below, pick a number and click the submit button.</p>
+        <input type="number" value="0" id="userinput">
+        <button type="button" onclick="get_Reply()"Submit></button>
+        <p id="feedback"></p>
+ 
+
+        <!--Calling the nested function add_Strings()-->
+        <p id="Time_of_day"></p>
+        <button onclick="Time_Function()">Click here to geteh time</button>
+    </body>
+</html>
