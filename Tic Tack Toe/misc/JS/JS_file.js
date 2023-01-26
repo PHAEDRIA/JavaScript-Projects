@@ -12,11 +12,11 @@ function placeXOrO(squareNumber) {
     if (!selectedSquares.some(element => element.includes(squareNumber))) {
     //Variable to hold the HTML element that was clicked
     let select = document.getElementById(squareNumber);
-    //Determines the active player and place th icon
+    //Dettermines the active player and place th icon
     if (activePlayer === 'X') {
-        select.style.backgroundImage ='url("./images/img_X.png")';    //FIX
+        select.style.backgroundImage ='url("images/x_img2.png")';    //FIX
     } else {
-        select.style.backgroundImage ='url("../images/img_O.png")';    //FIX
+        select.style.backgroundImage ='url("images/o_img1.png")';    //FIX
     }   
     //Adds the square number and player to the array
     selectedSquares.push(squareNumber + activePlayer);
@@ -29,7 +29,7 @@ function placeXOrO(squareNumber) {
         activePlayer = 'X';
     }
     //Function to play the placement sound
-    audio('./media/place.mp3');            //FIX
+    Audio('./media/place.mp3');            //FIX
     //Checks if it is the computer turn
     if (activePlayer === 'O'); {
         disableClick();
@@ -150,7 +150,4 @@ function disableClick() {
     setTimeout(function () { body.style.pointerEvents = 'auto'; }, 1000);
 }
 
-function audio(audioURL) {
-    let audio = new Audio(audioURL);
-    audio.play();
-    }
+
