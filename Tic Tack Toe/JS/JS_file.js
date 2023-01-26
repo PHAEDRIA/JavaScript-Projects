@@ -16,7 +16,7 @@ function placeXOrO(squareNumber) {
     if (activePlayer === 'X') {
         select.style.backgroundImage ='url("./images/img_X.png")';    //FIX
     } else {
-        select.style.backgroundImage ='url("../images/img_O.png")';    //FIX
+        select.style.backgroundImage ='url("./images/img_O.png")';    //FIX
     }   
     //Adds the square number and player to the array
     selectedSquares.push(squareNumber + activePlayer);
