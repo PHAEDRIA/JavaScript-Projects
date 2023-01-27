@@ -43,7 +43,7 @@ function Handle_Operator(Next_Operator) {
     //When an operator key is pressed we convert the current number
     //displayed on teh scrento a number and then store the result in
     //Calculator.First_Operand if it doesnt already exist.
-    const Value_if_Input = parseFloat(Display_Value);
+    const Value_of_Input = parseFloat(Display_Value);
     //Checks if an operator already exisists amd of wait Second_Operand is true,
     //Then updates the operator and exits from the function.
     if (operator && Calculator.wait_Second_Operand) {
@@ -77,7 +77,7 @@ const Perform_Calcualtion = {
     '-' : (First_Operand, Second_Operand) => First_Operand - Second_Operand,
     '=' : (First_Operand, Second_Operand) => Second_Operand
 };
-function calulator_Reset() {
+function calculator_Reset() {
     Calculator.Display_Value = '0';
     Calculator.First_Operand = null;
     Calculator.wait_Second_Operand = false;
@@ -87,13 +87,13 @@ function calulator_Reset() {
 function Update_Display() {
     //Makes us of the calculator-screen class to target the 
     //imput tage in the HTML document
-    const display = dcument.querySelector('.calculator-screen');
+    const display = document.querySelector('.calculator-screen');
     display.value = Calculator.Display_Value;
 }
 
 Update_Display();
 //This section montors button clicks
-const keys = dcument.querySelector('.calculator-keys');
+const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {                                      
     //The target varaible is an object that represents the element
     //That was clicked.
@@ -109,17 +109,17 @@ keys.addEventListener('click', (event) => {
     }
 
     if (target.classList.contains('decimal')) {
-        Handle_Decimal(target.value);
+       Input_Decimal(target.value);
         Update_Display();
         return;
     }
     //Ensures that AC clears all inputs from the Calculator screen.
     if (target.classList.contains('all-clear')) {
-        Calculator_Reset();
+        calculator_Reset();
         Update_Display();
         return;
     }
-    Input_Digit(target.value);
+    input_Digit(target.value);
     Update_Display();
 })
 
